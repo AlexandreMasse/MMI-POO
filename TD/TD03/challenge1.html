@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Challenge 1</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <script>
+            
+            /*
+             * Network game
+             * 1. Affichez le score de chaque joueur
+             * 2. Affichez la moyenne de chaque joueur
+             * 3. Affichez le prénom du gagnant
+             */
+
+            var joueur      = [ "Steve",
+                                "Brian",
+                                "Margaret",
+                                "John",
+                                "Lisa",
+                                "Harrison"];
+            var party1      = [7,75,43,26,98,38];
+            var party2      = [78,54,36,90,80,51];
+            var party3      = [84,13,68,67,23,78];
+
+            var highscore = 0;
+            var gagant = "";
+
+            for (var i= 0; i< joueur.length; i++) {
+
+                var score = party1[i] + party2[i] + party3[i];
+                var moyenne = score/3;
+
+                if (score > highscore) {
+                    highscore = score;
+                    gagnant = joueur[i];
+                }
+
+                console.log(joueur[i] + " a un score de " + score + " et une moyenne de " + moyenne);
+            };
+
+            console.log("le gagnant est " + gagnant);
+        </script>
+    </body>
+</html>

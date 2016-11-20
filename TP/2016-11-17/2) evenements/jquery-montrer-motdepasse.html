@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery</title>
+</head>
+<body>
+
+<h1>jQuery : Afficher/Cacher le mot de passe</h1>
+
+<p>L'évènement permettant d'écouter un changement sur un élément de formulaire s'appelle <code>change</code>. Il se déclanche lorsque l'utilisateur modifie directement la valeur d'un champs.</p>
+<p>Afin de vérifier si une "checkbox" est cochée ou non, vous pouvez utiliser la fonction jQuery <a href="https://api.jquery.com/is" target="_blank">.is()</a><br>
+Par exemple, pour vérifier si un élément est un <code>&lt;li&gt;</code>, on peut écrire :<code> if ($('.element').is('li'))</code><br>
+Pour vérifier si un élément est le dernier enfant de son parent, on peut aussi utiliser la pseudo-classe <code>:last-child</code> comme en CSS :<code> if ($('.element').is(':last-child'))</code><br>
+Pour info, il existe une pseudo-classe nommée <code>:checked</code></p>
+<hr>
+
+<h3>Consigne :</h3>
+<p>A l'aide de jQuery, faites en sorte que lorsque la checkbox est cochée, le champs de type password affiche le mot de passe en clair, et le re-cache si on décoche la checkbox à nouveau :</p>
+<br>
+
+<form action="#">
+  <input type="email" name="user-mail" placeholder="Votre email"><br>
+  <input type="password" name="user-password" placeholder="Votre mot de passe"><br>
+  <label><input type="checkbox" id="show-password"> <small>Afficher le mot de passe</small></label>
+</form>
+
+<!-- Commencez à coder ici (n'oubliez pas d'inclure la bibliothèque jQuery dans la page) -->
+
+</body>
+</html>

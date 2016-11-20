@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery</title>
+</head>
+<body>
+
+<h1>jQuery : Modifier les CSS</h1>
+
+<p>La fonction <a href="http://api.jquery.com/css/" target="_blank">.css()</a> de jQuery permet d'intéragir sur le CSS d'un ou plusieurs éléments.</p>
+<p>Ainsi, <code>$('h1').css('background-color', 'blue')</code> permettrait de changer la couleur de fond de tous les titres de niveau 1 de la page en bleu.</p>
+<hr>
+
+<h3>Consigne :</h3>
+<p>A l'aide de jQuery, changez la couleur d'affichage du texte des paragraphes suivants en fonction de la couleur des fruits qu'ils décrivent :</p>
+<br>
+
+<p class="pommes">Les pommes sont rouges.</p>
+<p class="poires">Les poires sont jaunes.</p>
+<p class="orange">Les oranges sont ... oranges.</p>
+
+
+
+<!-- Commencez à coder ici (n'oubliez pas d'inclure la bibliothèque jQuery dans la page) -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+<script>
+  $('p:nth-of-type(4)').css("color", "red");
+  $('p:nth-of-type(5)').css("color", "yellow");
+  $('p:nth-of-type(6)').css("color", "orange");
+</script>
+</body>
+</html>

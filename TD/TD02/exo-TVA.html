@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TVA</title>
+</head>
+<body>
+<script>
+    var ht =  prompt('Veuillez saisir le montant hors taxe');
+    ht = Number(ht);
+    alert ('La TVA est de 20%');
+    var tva = 0.2 * ht;
+    alert ('Le montant de la TVA est donc de ' + tva + ' €');
+    var ttc = ht + tva;
+    alert ('Le prix TTC est donc de ' + ttc + ' €');
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>message 2</title>
+</head>
+<body>
+<script>
+    var msg = "W-ll-#m H°>ry \"B-ll\" G#t°< III (b*r> Oct*b°r 28, 1955) -< #> Am°r-c#> bu<->°<< m#g>#t°, ph-l#>thr*p-<t, ->v°<t*r, c*mput°r pr*gr#mm°r, #>d ->v°>t*r. G#t°< -< th° f*rm°r ch-°f °x°cut-v° #>d ch#-rm#> *f M-cr*<*ft, th° w*rld'< l#rg°<t p°r<*>#l c*mput°r <*ftw#r° c*mp#>y, wh-ch h° c*-f*u>d°d w-th P#ul All°>.";
+
+    var code = ["#" , "*","°", "<", ">", "-"];
+    var decode = ["a", "o", "e","s", "n", "i"];
+
+    var msgsplit = msg.split("");
+
+    var message = "";
+
+    for (var i = 0 ; i < msgsplit.length; i++) {
+
+        for (var j = 0; j < code.length; j++) {
+
+            if (msgsplit[i] == code[j]) {
+                msgsplit[i] = decode[j];
+            }
+        }
+
+        var message = message + msgsplit[i];
+    }
+
+
+    console.log(msg);
+    console.log(msgsplit);
+    console.log(message);
+
+</script>
+</body>
+</html>

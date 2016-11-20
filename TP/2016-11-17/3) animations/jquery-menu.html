@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery</title>
+
+  <style>
+    ul#menu, ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    ul#menu > li {
+      display: inline-block;
+      vertical-align: top;
+      min-width: 150px;
+    }
+    ul#menu a {
+      display: block;
+      padding: 0.5rem 1.5rem;
+      background-color: #98aeb5;
+      box-shadow: 0 3px 5px #586e75;
+      color: #fff;
+      text-decoration: none;
+      text-shadow: 0 1px 0 #586e75;
+    }
+    ul#menu > li > a {
+      background-color: #687e85;
+      text-transform: uppercase;
+    }
+    ul#menu li li:not(:last-child) a {
+      border-bottom: thin dotted #586e75;
+    }
+    ul#menu ul { display: none }
+  </style>
+</head>
+<body>
+
+<h1>jQuery : Menu déroulant</h1>
+
+<p>Le <code>$(this)</code> en jQuery s'utilise à l'intérieur d'une fonction évènementielle. Il représente <b>l'objet jQuery qui a lancé l'évènement</b>.</p>
+<p>Ainsi, dans le code suivant :</p>
+<pre><code>
+  $('a').on('click', function () {
+    alert( <b>$(this)</b>.attr('href') );
+  });
+</code></pre>
+<p>... le <code>$(this)</code> représente <b>uniquement</b> le lien <code>&lt;a&gt;</code> qui a été cliqué (et non <b>tous</b> les <code>&lt;a&gt;</code>)</p>
+<hr>
+
+<h3>Consigne :</h3>
+<p>A l'aide de jQuery, faites en sorte que lorsque la souris entre sur un élément de menu principal, le sous-menu &lt;ul&gt; correspondant (et uniquement celui-ci) s'ouvre en sliding, et se referme lorsque la souris sort :</p>
+<br>
+
+<ul id="menu">
+  <li>
+    <a href="#">Menu 1</a>
+    <ul>
+      <li><a href="#">Sous-menu 1.1</a></li>
+      <li><a href="#">Sous-menu 1.2</a></li>
+      <li><a href="#">Sous-menu 1.3</a></li>
+      <li><a href="#">Sous-menu 1.4</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="#">Menu 2</a>
+    <ul>
+      <li><a href="#">Sous-menu 2.1</a></li>
+      <li><a href="#">Sous-menu 2.2</a></li>
+      <li><a href="#">Sous-menu 2.3</a></li>
+      <li><a href="#">Sous-menu 2.4</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="#">Menu 3</a>
+    <ul>
+      <li><a href="#">Sous-menu 3.1</a></li>
+      <li><a href="#">Sous-menu 3.2</a></li>
+      <li><a href="#">Sous-menu 3.3</a></li>
+      <li><a href="#">Sous-menu 3.4</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="#">Menu 4</a>
+    <ul>
+      <li><a href="#">Sous-menu 4.1</a></li>
+      <li><a href="#">Sous-menu 4.2</a></li>
+      <li><a href="#">Sous-menu 4.3</a></li>
+      <li><a href="#">Sous-menu 4.4</a></li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Commencez à coder ici (n'oubliez pas d'inclure la bibliothèque jQuery dans la page) -->
+
+</body>
+</html>

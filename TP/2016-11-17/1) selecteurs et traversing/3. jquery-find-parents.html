@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery</title>
+</head>
+<body>
+
+<h1>jQuery : Traversing</h1>
+
+<p>Les fonctions <a href="http://api.jquery.com/find/" target="_blank">.find()</a> et <a href="http://api.jquery.com/parents/" target="_blank">.parents()</a> de jQuery permettent de naviguer dans le DOM à partir d'un élément quelconque.</p>
+<p>Ainsi, <code>$('article').find('.authors')</code> permettrait de trouver l'élément portant la classe <code>authors</code> au sein de tous les articles</p>
+<hr>
+
+<h3>Consigne :</h3>
+<p>A l'aide de jQuery, <b>sélectionnez d'abord le &lt;ul&gt; portant l'ID "main"</b> et à partir de ce dernier, mettez en fond jaune les &lt;li&gt; qui portent la classe <code>.surligne</code> ...</p>
+<p>... puis, remontez dans l'arborescence avec <code>.parents()</code> jusqu'à retrouver le parent <code>&lt;ul id="main"&gt;</code> et mettez-lui une bordure jaune.</p>
+<br>
+
+<ul id="main">
+  <li>Élément 1</li>
+  <li>Élément 2</li>
+  <li class="surligne">Élément 3</li>
+  <li>Élément 4
+    <ul>
+      <li>Sous-élément 1</li>
+      <li>Sous-élément 2</li>
+      <li class="surligne">Sous-élément 3</li>
+    </ul>
+  </li>
+  <li>Élément 5</li>
+  <li class="surligne">Élément 6</li>
+  <li>Élément 7</li>
+  <li class="surligne">Élément 8</li>
+  <li>Élément 9
+    <ul>
+      <li class="surligne">Sous-élément 1</li>
+      <li>Sous-élément 2</li>
+      <li>Sous-élément 3</li>
+    </ul>
+  </li>
+  <li>Élément 10</li>
+</ul>
+
+<!-- Commencez à coder ici (n'oubliez pas d'inclure la bibliothèque jQuery dans la page) -->
+
+</body>
+</html>

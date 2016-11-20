@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculatrice</title>
+</head>
+<body>
+<script>
+'use strict';
+
+    var nb1 = prompt("Premier nombre");
+    nb1 = Number(nb1);
+    var op = prompt("Operateur (+,-,*,/,%)");
+    var nb2 = prompt("Deuxième nombre");
+    nb2 = Number(nb2);
+
+    if(op === "+") {
+        var nb3 = nb1 + nb2;
+        alert (nb3);
+    }
+else if(op === "-") {
+        var nb3 = nb1 - nb2;
+        alert (nb3);
+    }
+else if(op === "*") {
+        var nb3 = nb1 * nb2;
+        alert (nb3);
+    }
+else if(op === "/") {
+        var nb3 = nb1 / nb2;
+        alert (nb3);
+    }
+else if(op ==="%") {
+        var nb3 = nb1 % nb2;
+        alert (nb3);
+    }
+else {
+        alert ("Opérateur incorrect !");
+    }
+
+
+</script>
+</body>
+</html>

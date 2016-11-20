@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery</title>
+
+  <style>
+    .overlay {
+      position: absolute;
+      z-index: 99;
+      top: 0; left: 0; bottom: 0; right: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+    }
+    .popup {
+      background-color: #fff;
+      width: 400px;
+      height: 300px;
+      position: absolute;
+      left: calc(50% - 200px);
+      top: calc(50% - 150px);
+      z-index: 999;
+      border-radius: 5px;
+      box-shadow: 0 5px 7px rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      border: thin solid #ccc;
+      padding: 1rem;
+      display: none;
+    }
+    .popup .popup-title { font-size: 2em }
+    .popup .popup-close {
+      color: #f00;
+      text-decoration: none;
+      font-size: 1.6em;
+      position: absolute;
+      top: 0.1em;
+      right: 0.1em;
+      line-height: 1em;
+      text-shadow: 0 3px 3px #ccc;
+    }
+  </style>
+</head>
+<body>
+
+<h1>jQuery : Popup</h1>
+
+<p>Les méthodes <a href="http://api.jquery.com/fadeIn/" target="_blank">.fadeIn()</a>, <a href="http://api.jquery.com/fadeOut/" target="_blank">.fadeOut()</a>, <a href="http://api.jquery.com/slideUp/" target="_blank">.slideUp()</a> et <a href="http://api.jquery.com/slideDown/" target="_blank">.slideDown()</a> de jQuery permettent de lancer des animations simples.</p>
+<p>Ainsi, <code>$('h1').fadeOut()</code> permettrait de faire disparaître en fondu tous les &lt;h1&gt; de la page web.</p>
+<hr>
+
+<h3>Consigne :</h3>
+<p>A l'aide de jQuery, faites en sorte que la <code>.popup</code> (et le fond sombre <code>.overlay</code>) apparaissent en fondu ou en slide lorsqu'on clique sur le bouton ci-dessous :</p>
+<input type="button" id="popup-open" value="Ouvrir la popup">
+<p>Faite également en sorte de refermer la popup lorsqu'on cliquera sur la petite croix rouge ...</p>
+<br>
+
+<div class="overlay"></div>
+<div class="popup">
+  <div class="popup-title">Titre</div>
+  <p class="popup-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, voluptatibus minus necessitatibus veritatis itaque magnam recusandae, ad eum veniam sapiente cumque fugiat ipsam nesciunt nam cupiditate tempore, omnis beatae id!</p>
+  <a href="#" class="popup-close" title="Fermer la popup">✖</a>
+</div>
+
+<!-- Commencez à coder ici (n'oubliez pas d'inclure la bibliothèque jQuery dans la page) -->
+
+</body>
+</html>

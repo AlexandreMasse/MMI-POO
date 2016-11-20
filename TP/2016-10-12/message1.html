@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>message 1</title>
+</head>
+<body>
+<script>
+    var msg = "St_v_n P*$l \"St_v_\" J&bs w*s *n *m_r%c*n %nv_nt&r *nd _ntr_pr_n_$r. H_ w*s c&-f&$nd_r, ch*%rm*n, *nd ch%_f _x_c$t%v_ &ff%c_r &f *ppl_ %nc. J&bs w*s c&-f&$nd_r *nd pr_v%&$sly s_rv_d *s ch%_f _x_c$t%v_ &f P%x*r *n%m*t%&n St$d%&s; h_ b_c*m_ * m_mb_r &f th_ b&*rd &f d%r_ct&rs &f th_ W*lt D%sn_y C&mp*ny %n 2006, f&ll&w%ng th_ *cq$%s%t%&n &f P%x*r by D %sn_y.";
+
+    var code = ["_" , "*","%", "&", "$"];
+    var decode = ["e", "a", "i","o", "u"];
+
+    var msgsplit = msg.split("");
+
+    var message = "";
+
+    for (var i = 0 ; i < msgsplit.length; i++) {
+
+        for (var j = 0; j < code.length; j++) {
+
+            if (msgsplit[i] == code[j]) {
+                msgsplit[i] = decode[j];
+            }
+        }
+
+        var message = message + msgsplit[i];
+    }
+
+
+    console.log(msg);
+    console.log(msgsplit);
+    console.log(message);
+
+</script>
+</body>
+</html>

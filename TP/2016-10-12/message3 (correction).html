@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>message 3</title>
+</head>
+<body>
+<script>
+    var message = 'Sl jopmmyl kl Jlzhy (vb jvkl kl Jlzhy) lza bu jopmmyltlua why kljhshnl whytp slz wsbz zptwslz la slz wsbz jvuub, ps bapspzl sh zbizapabapvu k\'bul slaayl why bul hbayl wsbz svpu khuz s\'hswohila';
+
+    // Tableau de lettre alphabet
+    var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+
+    message = message.split('');
+
+    var position, newPosition, estMajuscule;
+    for (var i = 0; i < message.length; i++) {
+        estMajuscule = (message[i] === message[i].toUpperCase()); //stock true ou false
+
+        message[i] = message[i].toLowerCase();
+        position = alphabet.indexOf(message[i]);
+
+        if (position >= 0) {
+            newPosition = position - 7;
+            if (newPosition < 0) {
+                newPosition = newPosition + alphabet.length;
+            }
+
+            message[i] = alphabet[newPosition];
+
+            if (estMajuscule) {
+                message[i] = message[i].toUpperCase();
+            }
+        }
+    }
+
+    document.write(message.join(''));
+</script>
+</body>
+</html>

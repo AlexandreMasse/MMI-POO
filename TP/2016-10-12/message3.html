@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>message 3</title>
+</head>
+<body>
+<script>
+    var msg = "sl jopmmyl kl Jlzhy (vb jvkl kl Jlzhy) lza bu jopmmyltlua why kljhshnl whytp slz wsbz zptwslz la slz wsbz jvuub, ps bapspzl sh zbizapabapvu k'bul slaayl why bul hbayl wsbz svpu khuz s'hswohila";
+
+    var alphabetmin = "abcdefghjklmnopqrstuvwxyz".split("");
+    var alphabetmaj = "abcdefghjklmnopqrstuvwxyz".toUpperCase().split("");
+
+    console.log(alphabetmin);
+    console.log(alphabetmaj);
+
+    var msgsplit = msg.split("");
+
+    var message = "";
+
+    for (var i = 0 ; i < msgsplit.length; i++) {
+
+        for (var j = 0; j < alphabetmin.length; j++) {
+            //on parcours l'alphabetmin
+            if (msgsplit[i] == alphabetmin[j]) {
+                //7 dernières lettres
+                if (j > 18) {
+                    var position = 7 - (26-j);
+                    msgsplit[i] = alphabetmin[position];
+                }
+
+                //premiere lettre de l'alphabet
+                if (j <= 18) {
+                    var position = j+7;
+                    msgsplit[i] = alphabetmin[position];
+
+                }
+            }
+
+        }
+
+        var message = message + msgsplit[i];
+    }
+
+
+    console.log(msg);
+    console.log(msgsplit);
+    console.log(message);
+
+</script>
+</body>
+</html>
