@@ -40,5 +40,32 @@
   </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script>
+
+    /*
+    1) Sélectionner le conteneur principal
+     2) Ajouter un padding au inner
+     3) Chaque paragraphe doit avoir la police "Georgia"
+     4) Chaque liste doit avoir la police "Trebuchet MS"
+     5) Les items de la 1ère liste doivent être en italiques
+     6) Les items de la 2ème liste doivent être en gras
+     */
+
+    $('.container').find('.inner').css('padding', '15px');
+
+    $('p').css('font-family', 'Georgia');
+
+    $('li').css('font-family', 'Trebuchet MS');
+
+    $('ul:nth-of-type(1) li').css('font-style', 'italic');
+
+    $('ul:nth-of-type(2) li').css('font-weight', 'bold');
+
+
+
+
+  </script>
+
 </body>
 </html>

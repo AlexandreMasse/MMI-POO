@@ -26,6 +26,27 @@
 </article>
 
 <!-- Commencez à coder ici (n'oubliez pas d'inclure la bibliothèque jQuery dans la page) -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
+<script>
+
+  // Récupération de l'url de l'image
+  var urlimg = $('p.image').attr('data-image-url');
+
+  //configurtion de l'url
+  $('.image img').attr('src', urlimg);
+
+  //Récupratiuon de couleur
+  var color = $('p.couleur').attr('data-couleur');
+
+  //Configuration de la couleur
+  $('p.couleur').css('color', color);
+
+  //récuperation du mot de passe
+  var mdp = $('.motdepasse').attr('data-motdepasse');
+
+  //affichage du mdp
+  $('p.motdepasse i').text(mdp);
+</script>
 </body>
 </html>
