@@ -29,6 +29,7 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
 <script>
+$(document).ready( function () {
 
   // Récupération de l'url de l'image
   var urlimg = $('p.image').attr('data-image-url');
@@ -47,6 +48,8 @@
 
   //affichage du mdp
   $('p.motdepasse i').text(mdp);
+
+});
 </script>
 </body>
 </html>

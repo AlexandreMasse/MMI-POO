@@ -46,7 +46,10 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
 <script>
-  v$('ul#main').find('li.surligne').css('background-color', 'yellow').parents('ul#main').css('border', '3px solid yellow');
+  $(document).ready(function () {
+
+    $('ul#main').find('li.surligne').css('background-color', 'yellow').parents('ul#main').css('border', '3px solid yellow');
+  });
 </script>
 </body>
 </html>

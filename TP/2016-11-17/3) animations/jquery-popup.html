@@ -62,6 +62,29 @@
 </div>
 
 <!-- Commencez à coder ici (n'oubliez pas d'inclure la bibliothèque jQuery dans la page) -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+<script>
+
+//ouvrir la popup
+
+  $('#popup-open').click(function () {
+    $('.popup').fadeIn("slow");
+    $('.overlay').fadeIn("slow");
+          }
+  );
+
+//fermer la popup
+
+  $('.popup-close').click(function () {
+    $('.popup').fadeOut("slow");
+    $('.overlay').fadeOut("slow");
+          }
+  );
+
+
+
+</script>
 
 </body>
 </html>

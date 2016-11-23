@@ -25,7 +25,36 @@ Pour info, il existe une pseudo-classe nommée <code>:checked</code></p>
   <label><input type="checkbox" id="show-password"> <small>Afficher le mot de passe</small></label>
 </form>
 
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <!-- Commencez à coder ici (n'oubliez pas d'inclure la bibliothèque jQuery dans la page) -->
 
+<script>
+
+$(document).ready( function () {
+
+
+  function check(evt) {
+    $('input[name="user-password"]').attr('type', 'text');
+  };
+
+  function uncheck(evt) {
+      $('input[name="user-password"]').attr('type', 'password');
+  };
+
+
+  $('#show-password').on('change', function () {
+    if ($('#show-password').is(':checked')) {
+      check();
+    }
+    else {
+      uncheck();
+    }
+  });
+
+
+});
+
+</script>
 </body>
 </html>
