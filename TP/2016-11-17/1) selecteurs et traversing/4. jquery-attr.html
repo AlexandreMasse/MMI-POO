@@ -29,27 +29,30 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
 <script>
-$(document).ready( function () {
 
-  // Récupération de l'url de l'image
-  var urlimg = $('p.image').attr('data-image-url');
+  'use strict';
 
-  //configurtion de l'url
-  $('.image img').attr('src', urlimg);
+  $(document).ready( function () {
 
-  //Récupratiuon de couleur
-  var color = $('p.couleur').attr('data-couleur');
+    // Récupération de l'url de l'image
+    var urlimg = $('p.image').attr('data-image-url');
 
-  //Configuration de la couleur
-  $('p.couleur').css('color', color);
+    //configurtion de l'url
+    $('.image img').attr('src', urlimg);
 
-  //récuperation du mot de passe
-  var mdp = $('.motdepasse').attr('data-motdepasse');
+    //Récupratiuon de couleur
+    var color = $('p.couleur').attr('data-couleur');
 
-  //affichage du mdp
-  $('p.motdepasse i').text(mdp);
+    //Configuration de la couleur
+    $('p.couleur').css('color', color);
 
-});
+    //récuperation du mot de passe
+    var mdp = $('.motdepasse').attr('data-motdepasse');
+
+    //affichage du mdp
+    $('p.motdepasse i').text(mdp);
+
+  });
 </script>
 </body>
 </html>
