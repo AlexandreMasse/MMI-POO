@@ -7,12 +7,14 @@
   <link rel="stylesheet" href=".resources/.styles/enonce.css">
   <style>
     /* Classe à appliquer en jQuery sur chaque élément qui sera coché */
+
     .coche {
       font-weight: bold;
       color: green;
       -webkit-animation: appear 800ms;
               animation: appear 800ms;
     }
+
   </style>
   <script src=".resources/.hljs/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
@@ -89,6 +91,47 @@ Une autre méthode nommée <code><a href="http://api.jquery.com/toggleClass" tar
 </section>
 
 <!-- Commencez à coder ici (n'oubliez pas d'inclure la bibliothèque jQuery dans la page) -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
+<script>
+  'use strict';
+
+  $(document).ready(function () {
+
+    var counter = 0;
+
+    $('input[type="checkbox"]').on('click', function () {
+
+
+      $(this).next().toggleClass("coche");
+
+      counter = $('input[type="checkbox"]:checked').length;
+
+
+       /*Alternative
+
+      if ( $(this).is(':checked') ) {
+        counter++;
+        $(this).next().addClass('coche');
+      } else {
+        counter--;
+        $(this).next().removeClass('coche');
+      }
+
+     */
+
+
+      $('output').text(counter);
+
+
+
+
+
+    })
+
+
+  });
+
+  </script>
 </body>
 </html>
