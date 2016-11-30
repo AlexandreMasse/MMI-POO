@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr" class="exo4">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery</title>
+  <link rel="stylesheet" href=".resources/.hljs/github.min.css">
+  <link rel="stylesheet" href=".resources/.styles/enonce.css">
+  <style>
+    .selected {
+      border-color: red !important;
+      box-shadow: 0 0 10px 3px red !important;
+    }
+  </style>
+  <script src=".resources/.hljs/highlight.min.js"></script>
+  <script src=".resources/enonce.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+
+<!-- ============================================================================================================ -->
+<!-- ================ ZONE RÉSERVÉE À L'ÉNONCÉ : NE TOUCHEZ PAS À CETTE PARTIE DU HTML ! ======================== -->
+<!-- ============================================================================================================ -->
+
+<h1>jQuery : Images selector !</h1>
+
+<p>Les évènements clavier principaux en JavaScript se nomment <code>keydown</code> et <code>keyup</code>, et permettent respectivement d'écouter lorsque n'importe quelle touche est appuyée, et relâchée.</p>
+
+<p>Ces évènements s'écoutent généralement sur l'objet <code>document</code> <small>(il n'est pas vraiment logique d'écouter un 'keydown sur une &lt;div&gt;)</small> :</p>
+
+<pre class="vm"><code class="hljs js" data-trim>
+$(document).on(<mark>'keydown'</mark>, function(<mark>evt</mark>) {
+  if (<mark>evt.keyCode === 32</mark>) { // 32 --> touche "Espace" dans la table ASCII
+    console.log('Vous venez d\'appuyer sur la touche "Espace" !');
+  }
+});
+</code></pre> ...et pour le <code>keyup</code>:
+<pre class="vm"><code class="hljs js" data-trim>
+$(document).on(<mark>'keyup'</mark>, function(<mark>evt</mark>) {
+  if (<mark>evt.keyCode === 32</mark>) {
+    console.log('Vous venez de relâcher la touche "Espace" !');
+  }
+});
+</code></pre><br>
+<small>(<a href="http://www.ascii-code.com/" target="_blank">Table ASCII des caractères</a>)</small><br>
+<br>
+<h3>Cloner un élément</h3>
+<p>En JavaScript, il est possible de cloner un élément HTML, et jQuery simplifie cette opération grâce à sa méthode <code><a href="https://api.jquery.com/clone" target="_blank">.clone()</a></code>, qui s'utilise de la manière suivante :</p>
+
+<pre><code class="hljs html" data-trim>
+  &lt;input type="button" id="btn_copy" value="Copier !"&gt;
+  &lt;img src="fruit.jpg" <mark>id="fruit"</mark> alt=" "&gt;
+  &lt;div id="copies"&gt;&lt;/div&gt; &lt;!-- Au clic, on insèrera les copies dans cette &lt;div&gt; --&gt;
+</code></pre><br>
+<pre><code class="hljs js" data-trim>
+  $('#btn_copy').on('click', function() {
+    var fruit_copie = <mark>$('#fruit').clone();</mark>
+    $('#copies').append(fruit_copie); // Insère la copie dans la &lt;div id="copies"&gt;
+  });
+</code></pre><br>
+<input type="button" id="btn_copy" value="Copier !">
+<img src=".resources/.images/fruits/4.jpg" width="50" alt="Un fruit" id="fruit" class="vm"><br>
+<div id="copies"></div>
+<script>!function(){document.getElementById("btn_copy").addEventListener("click",function(a){var b=document.getElementById("fruit").cloneNode();document.getElementById("copies").appendChild(b)},!1)}();</script>
+
+
+<fieldset class="consigne">
+  <legend>Consigne :</legend>
+  <figure>
+    <p>Le principe de l'exercice est de pouvoir se déplacer avec les touches directionnelles sur les 5 images ci-dessous, et en appuyant sur <b>Entrée</b> d'ajouter/retirer une copie de l'élément dans le panier en dessous.</p>
+    <p>Une classe CSS <code>.selected</code> a déjà été créée pour vous pour être appliquée sur l'<code>&lt;img&gt;</code> qui sera sélectionnée.<br>
+    Commencez par essayer d'appliquer cette classe CSS à chaque <code>&lt;img&gt;</code> de gauche à droite lorsqu'une des deux touche directionnelle est pressée.</p>
+    <p>Une fois cette première étape effectuée, vous pourrez implémenter le paramètrage de la touche <b>Entrée</b> pour cloner l'élément sélectionné et l'insérer dans le <code>#panier</code>. À ce stade, il faudra gérer le fait que si l'élément se trouvait déjà dans le panier, il faudra l'y enlever et replacer l'élément original en opacité <b>1</b>.</p>
+    <img src=".resources/.images/evenements-4.gif" alt="Animation">
+    <figcaption>
+      <span style="font-size: 2rem">←</span> et <span style="font-size: 2rem">→</span> pour se déplacer.<br>
+      <span style="font-size: 2rem">↩</span> (entrée) pour choisir/retirer un produit.<br>
+      <small>Notez que lorsqu'on se trouve sur la dernière image de droite et qu'on appuie sur →, on revient sur le premier élément, et inversement.</small>
+    </figcaption>
+  </figure>
+</fieldset>
+
+<!-- ============================================================================================================ -->
+<!-- =================================== DÉBUT DE VOTRE ZONE DE TRAVAIL ... ===================================== -->
+<!-- ============================================================================================================ -->
+
+<h2>À vous de jouer... :</h2>
+
+<section id="produits">
+  <img src=".resources/.images/fruits/1.jpg" id="mures"         alt="Mures"         class="selected">
+  <img src=".resources/.images/fruits/2.jpg" id="pamplemousses" alt="Pamplemousses" >
+  <img src=".resources/.images/fruits/3.jpg" id="melon"         alt="Melon"         >
+  <img src=".resources/.images/fruits/4.jpg" id="framboises"    alt="Framboises"    >
+  <img src=".resources/.images/fruits/5.jpg" id="concombre"     alt="Concombre"     >
+</section>
+<section id="panier">
+  <!-- Seront insérés ici des copies des produits choisit -->
+</section>
+
+<!-- Commencez à coder ici (n'oubliez pas d'inclure la bibliothèque jQuery dans la page) -->
+
+</body>
+</html>

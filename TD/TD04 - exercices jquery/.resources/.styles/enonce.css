@@ -1,0 +1,100 @@
+html {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.4rem;
+}
+body {
+  max-width: 80%;
+  margin: 0 auto;
+}
+mark {
+  background-color: rgba(255,255,0,0.4);
+  border-radius: 3px;
+}
+pre {
+  display: inline-block;
+  margin: 0;
+}
+img {
+  max-width: 100%;
+}
+code:not(.hljs) {
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+  padding: 2px 4px;
+  font-size: 80%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+code:not(.hljs) > a { color: inherit; }
+h2 { text-align: center; }
+.consigne {
+  margin: 1rem auto;
+  border: thin solid #c0c0c0;
+  background-color: rgba(0, 0, 0, 0.06);
+  text-align: center;
+  min-width: 50vw;
+}
+  .consigne > legend { font-size: 2rem; }
+  .consigne figcaption { margin-bottom: 1rem; }
+
+.vm { display: inline-block; vertical-align: middle; }
+
+/* Exo 1 */
+/* ====================== */
+.exo1 section {
+  overflow: hidden;
+  width: 50%;
+  margin: 0 auto;
+}
+  .exo1 section > ul {
+    list-style: none;
+    float: left;
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .exo1 section label {
+    cursor: pointer;
+  }
+  @keyframes appear {
+      0% { background-color: lime; }
+    100% { background-color: transparent; }
+  }
+  @-webkit-keyframes appear {
+      0% { background-color: lime; }
+    100% { background-color: transparent; }
+  }
+
+
+/* Exo 2 */
+/* ====================== */
+.exo2 form {
+  text-align: center;
+}
+
+/* Exo 4 */
+/* ====================== */
+
+.exo4 #produits::after,
+.exo4 #produits:after,
+.exo4 #panier {
+  clear: both;
+  zoom: 1;
+}
+.exo4 #produits > img,
+.exo4 #panier > img {
+  width: calc(20% - 16px);
+  margin: 0 6px;
+  border: 2px solid #9a9a9a;
+  float: left;
+}
+.exo4 #panier > img { border-color: #c0c0c0 !important; box-shadow: none !important; }
+.exo4 #panier {
+  overflow: hidden;
+  margin-top: 0.5rem;
+  min-height: 99px;
+  padding: 10px 0;
+  border: 2px dashed #d0d0d0;
+  background-color: #eaeaea;
+}

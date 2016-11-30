@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr" class="exo3">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery</title>
+  <link rel="stylesheet" href=".resources/.hljs/github.min.css">
+  <link rel="stylesheet" href=".resources/.styles/enonce.css">
+  <style>
+    /* L'image du chat est déjà positionnée en absolu dans la page */
+    #chat { position: absolute; }
+  </style>
+  <script src=".resources/.hljs/highlight.min.js"></script>
+  <script src=".resources/enonce.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+
+<!-- ============================================================================================================ -->
+<!-- ================ ZONE RÉSERVÉE À L'ÉNONCÉ : NE TOUCHEZ PAS À CETTE PARTIE DU HTML ! ======================== -->
+<!-- ============================================================================================================ -->
+
+<h1>jQuery : Follow the mouse !</h1>
+
+<p>L'évènement permettant de détecter si la souris bouge par dessus un élément HTML se nomme <code>mousemove</code>. Il est possible d'écouter cet évènement sur n'importe quel élément HTML, ainsi que sur le <code>document</code> tout entier.</p>
+
+<p>Lors du déclenchement de n'importe quel évènement (click, mousemove, keydown, ..), un paramètre peut être récupéré dans la fonction. Ce paramètre, que l'on appelle généralement <code>evt</code>, contient pleins d'informations utiles sur le type d'évènement déclenché :</p>
+<pre><code class="hljs js" data-trim>
+  $(document).on('click', function(<mark>evt</mark>) {
+    alert('Évènement ' + <mark>evt.type</mark> + ' déclenché aux coordonnées ' + <mark>evt.clientX</mark> + ', ' + <mark>evt.clientY</mark>);
+  });
+</code></pre>
+
+<fieldset class="consigne">
+  <legend>Consigne :</legend>
+  <figure>
+    <figcaption>A l'aide d'un <code>mousemove</code>, utilisez les coordonnées de la souris lors du mouvement pour renseigner les propriétés CSS <code>left</code> et <code>top</code> de l'image du chat.<br>
+    NB: l'image est déjà en <code>position: absolute;</code> dans la page.</figcaption>
+    <img src=".resources/.images/evenements-3a.gif" alt="Animation">
+    <figcaption>Notez que la position de la souris par rapport à l'image doit être au milieu à droite.</figcaption>
+    <fieldset class="consigne">
+      Une fois l'exercice fini, vous pouvez l'améliorer en <a href="#" onclick="toggle('dragndrop')">tentant un drag-n-drop ...</a><br>
+      <div id="dragndrop" style="display:none"><img src=".resources/.images/evenements-3b.gif" alt="Animation"></div>
+    </fieldset>
+  </figure>
+</fieldset>
+
+<!-- ============================================================================================================ -->
+<!-- =================================== DÉBUT DE VOTRE ZONE DE TRAVAIL ... ===================================== -->
+<!-- ============================================================================================================ -->
+
+<h2>À vous de jouer... :</h2>
+
+<img src=".resources/.images/cat.png" alt="Meow" id="chat" draggable="false">
+
+<!-- Commencez à coder ici (n'oubliez pas d'inclure la bibliothèque jQuery dans la page) -->
+
+</body>
+</html>

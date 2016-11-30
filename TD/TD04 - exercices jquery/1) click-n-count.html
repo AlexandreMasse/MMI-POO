@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr" class="exo1">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery</title>
+  <link rel="stylesheet" href=".resources/.hljs/github.min.css">
+  <link rel="stylesheet" href=".resources/.styles/enonce.css">
+  <style>
+    /* Classe à appliquer en jQuery sur chaque élément qui sera coché */
+    .coche {
+      font-weight: bold;
+      color: green;
+      -webkit-animation: appear 800ms;
+              animation: appear 800ms;
+    }
+  </style>
+  <script src=".resources/.hljs/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+
+<!-- ============================================================================================================ -->
+<!-- ================ ZONE RÉSERVÉE À L'ÉNONCÉ : NE TOUCHEZ PAS À CETTE PARTIE DU HTML ! ======================== -->
+<!-- ============================================================================================================ -->
+
+<h1>jQuery : Clic & count</h1>
+
+<p>L'évènement pour écouter un <em>clic</em> sur un élément HTML s'appelle <code>click</code>.<br>
+Il prend en paramètre une fonction qui s'exécutera <b>à chaque fois</b> que l'on déclenchera l'évènement :</p>
+<pre><code class="hljs html">&lt;input type="button" <mark>id="mon_button"</mark> value="CLIQUEZ-MOI"&gt;</code></pre>
+</code></pre><br>
+<pre><code class="hljs js">var counter = 0;
+$('<mark>#mon_button</mark>').on('click', function() {
+  counter++;
+  alert('Ce bouton a été cliqué '+ counter +' fois !');
+});
+</code></pre><br>
+<input type="button" id="mon_button" value="CLIQUEZ-MOI">
+<script>!function(){var a=0;document.querySelector("#mon_button").addEventListener("click",function(){alert("Ce bouton a été cliqué "+ ++a+" fois !")},!1)}();</script>
+<br><br>
+<p>Il est aussi possible de récupérer exactement l'élément qui a déclenché l'évènement, en utilisant à l'intérieur de la fonction le mot-clé <code>this</code> :</p>
+<pre><code class="hljs html">&lt;button&gt;UN&lt;/button&gt;
+&lt;button&gt;DEUX&lt;/button&gt;
+</code></pre>
+</code></pre><br>
+<pre><code class="hljs js">$('button').on('click', function() {
+  alert('Tu as cliqué sur ' + <mark>$(this).text()</mark>);
+});
+</code></pre><br>
+<button>UN</button>
+<button>DEUX</button>
+<script>!function(){[].slice.call(document.querySelectorAll("button")).forEach(function(t){t.addEventListener("click",function(t){alert("Tu as cliqué sur "+t.target.textContent)},!1)})}();</script>
+<br>
+<br>
+<p>Pour ajouter ou retirer une classe CSS sur un/des élément(s) HTML, il existe les méthodes jQuery <code><a href="http://api.jquery.com/addClass" target="_blank">addClass()</a></code> et <code><a href="http://api.jquery.com/removeClass" target="_blank">removeClass()</a></code>.<br>
+Une autre méthode nommée <code><a href="http://api.jquery.com/toggleClass" target="_blank">toggleClass()</a></code> permet d'alternativement d'ajouter/retirer une classe CSS.</p>
+
+<fieldset class="consigne">
+  <legend>Consigne :</legend>
+  <figure>
+    <figcaption>Vous allez créer un compteur d'éléments cochés dans une liste de propositions, comme le montre le résultat suivant :</figcaption>
+    <img src=".resources/.images/evenements-1.gif" alt="Animation">
+    <figcaption>Lors du clic sur un <code>&lt;input type="checkbox"&gt;</code>, vous compterez à chaque fois le nombre d'éléments cochés pour injecter ce nombre dans l'élément <code>&lt;output&gt;&lt/output&gt;</code>. N'oubliez pas d'appliquer/retirer la classe CSS <code>coche</code> (pour mettre en vert) sur le <code>&lt;label&gt;</code> de l'élément coché/décoché.</figcaption>
+  </figure>
+</fieldset>
+
+<!-- ============================================================================================================ -->
+<!-- =================================== DÉBUT DE VOTRE ZONE DE TRAVAIL ... ===================================== -->
+<!-- ============================================================================================================ -->
+
+<h2>À vous de jouer... :</h2>
+
+<section>
+  <p>Vous avez coché <output>0</output> élément(s).</p>
+  <ul>
+    <li><input type="checkbox" id="velo"><label for="velo">Vélo</label></li>
+    <li><input type="checkbox" id="moto"><label for="moto">Moto</label></li>
+    <li><input type="checkbox" id="rollers"><label for="rollers">Rollers</label></li>
+    <li><input type="checkbox" id="natation"><label for="natation">Natation</label></li>
+    <li><input type="checkbox" id="artsmartiaux"><label for="artsmartiaux">Arts martiaux</label></li>
+  </ul>
+  <ul>
+    <li><input type="checkbox" id="athletisme"><label for="athletisme">Athlétisme</label></li>
+    <li><input type="checkbox" id="basket"><label for="basket">Basket</label></li>
+    <li><input type="checkbox" id="volleyball"><label for="volleyball">Volleyball</label></li>
+    <li><input type="checkbox" id="gymnastique"><label for="gymnastique">Gymnastique</label></li>
+    <li><input type="checkbox" id="football"><label for="football">Football</label></li>
+  </ul>
+</section>
+
+<!-- Commencez à coder ici (n'oubliez pas d'inclure la bibliothèque jQuery dans la page) -->
+
+</body>
+</html>
