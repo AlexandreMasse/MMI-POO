@@ -62,11 +62,15 @@
 
   $(document).ready(function () {
 
-    function bouge (evt) {
-      $('#chat').css ({
-        "top": evt.clientY+80,
-        "left": evt.clientX-180,
+    var chat = $('#chat'); //Mise en cache pour les performences
 
+    function bouge (evt) {
+      chat.css ({
+        "left": evt.pageX - chat.width()/2,//on recupère la largeur de l'image
+        "top": evt.pageY - chat.height()/2,//on recupère la hauteur de l'image
+        //evt.pageX et evt.pageY --> position de la souris par rapport à la page
+        //evt.screenX et evt.screenY --> position de la souris par rapport à l'écran
+        //evt.clientX et evt.clientY --> position de la souris par rapport au viewport
       })
     }
 
