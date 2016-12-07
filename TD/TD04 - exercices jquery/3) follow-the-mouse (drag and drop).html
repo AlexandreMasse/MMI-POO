@@ -55,37 +55,38 @@
 <!-- Commencez à coder ici (n'oubliez pas d'inclure la bibliothèque jQuery dans la page) -->
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
 <script>
-
-  'use strict';
-
   $(document).ready(function () {
 
-    var chat = $('#chat'); //Mise en cache pour les performences
+    var chat = $('#chat'); //Mise en cache (pour les perfs)
+    var sourisEnfoncee = false;
+    var sourisOffsetX, sourisOffsetY;
 
-    $(this).on('mousemove', bouge);
+    $(document).on('mousemove', function (evt) {
+      if(sourisEnfoncee === true){
+        chat.css({
+          left: evt.pageX - sourisOffsetX,
+          top: evt.pageY - sourisOffsetY
+        });
+      }
+    }); //Fin du mousemove
 
-    function bouge (evt) {
-      chat.css ({
-        "left": evt.pageX - chat.width()/2,//on recupère la largeur de l'image
-        "top": evt.pageY - chat.height()/2//on recupère la hauteur de l'image
+    chat.on('mousedown', function (evt) {
+      evt.preventDefault(); //Annule le comportement par defaut du navigateur
 
-        //evt.pageX et evt.pageY --> position de la souris par rapport à la page
-        //evt.screenX et evt.screenY --> position de la souris par rapport à l'écran
-        //evt.clientX et evt.clientY --> position de la souris par rapport au viewport
-      })
-    }
+      sourisEnfoncee = true;
+
+      sourisOffsetX = evt.pageX - chat.offset().left; // position X de la souris sur la page - decalage de l'image à gauche
+      sourisOffsetY = evt.pageY - chat.offset().top; // position Y de la souris sur la page - decalage de l'image en haut
+    });
 
 
+    $('body').on('mouseup mouseleave', function () { //On met en sélecteur "body" pour permettre de passez la variable "sourisEnfoncee" à false lorsque la souris quitte la fenêtre du navigateur tout en laissant cette valeur à false lorsque l'utilisateur ne clique pas sur la souris.
+      sourisEnfoncee = false;
+    })
 
-
-
-  });
-
-
+  })
 </script>
-
 
 </body>
 </html>
