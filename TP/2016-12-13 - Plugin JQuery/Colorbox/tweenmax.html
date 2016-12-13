@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Galerie d'images avec jQuery</title>
+  <meta name="viewport" content="width=device-width">
+  
+  <!-- Style CSS pour la démo (pas besoin de toucher à ce fichier) -->
+  <link rel="stylesheet" href="css/galerie.css">
+  <link rel="stylesheet" href="plugin/colorbox/example3/colorbox.css">
+
+</head>
+<body>
+
+  <div class="galerie">
+
+    <h1>Ma galerie d'images</h1>
+
+    <p>Cliquez sur une image pour l'agrandir</p>
+
+    <div class="miniatures">
+      <figure><a href="images/fullsize/1.jpg"><img src="images/miniature/1.jpg" alt=""></a></figure>
+      <figure><a href="images/fullsize/2.jpg"><img src="images/miniature/2.jpg" alt=""></a></figure>
+      <figure><a href="images/fullsize/3.jpg"><img src="images/miniature/3.jpg" alt=""></a></figure>
+      <figure><a href="images/fullsize/4.jpg"><img src="images/miniature/4.jpg" alt=""></a></figure>
+      <figure><a href="images/fullsize/5.jpg"><img src="images/miniature/5.jpg" alt=""></a></figure>
+      <figure><a href="images/fullsize/6.jpg"><img src="images/miniature/6.jpg" alt=""></a></figure>
+      <figure><a href="images/fullsize/7.jpg"><img src="images/miniature/7.jpg" alt=""></a></figure>
+      <figure><a href="images/fullsize/8.jpg"><img src="images/miniature/8.jpg" alt=""></a></figure>
+    </div><!-- .miniatures -->
+
+  </div><!-- .galerie -->
+
+  <!-- Commencer à coder à partir d'ici (n'oubliez pas d'inclure jQuery) -->
+  <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+  <script src="plugin/colorbox/jquery.colorbox.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+  <script>
+    'use strict';
+
+    $(document).ready( function() {
+
+      var titre = $('.galerie > h1');
+      var p = $('.galerie > p');
+      var images = $('.miniatures > figure');
+
+      var tl = new TimelineMax();
+
+      tl
+        .from( titre, 1, { y:-100, opacity:0, ease:Bounce.easeOut } )
+        .from( p, 1, { x:-300, opacity:0, ease:Elastic.easeOut } )
+        .staggerFrom( images, 2, { x:-50, opacity:0, ease:Elastic.easeOut }, 0.05 );
+
+      
+      $('.miniatures a').colorbox( {
+        rel:'chats',
+        transition:'fade',
+        width: '50%',
+        slideshow: true,
+        slideshowSpeed: 4000
+      } );
+
+    } );
+  </script>
+  
+</body>
+</html>
