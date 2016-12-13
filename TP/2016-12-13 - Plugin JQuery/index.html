@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Galerie d'images avec jQuery</title>
+  
+  <!-- Style CSS pour la démo (pas besoin de toucher à ce fichier) -->
+  <link rel="stylesheet" href="css/galerie.css">
+  <link rel="stylesheet" href="plugin/colorbox/example4/colorbox.css">
+</head>
+<body>
+
+  <div class="galerie">
+
+    <h1>Ma galerie d'images</h1>
+
+    <p>Cliquez sur une image pour l'agrandir</p>
+
+    <div class="miniatures">
+      <figure><a href="images/fullsize/1.jpg"><img src="images/miniature/1.jpg" alt=""></a></figure>
+      <figure><a href="images/fullsize/2.jpg"><img src="images/miniature/2.jpg" alt=""></a></figure>
+      <figure><a href="images/fullsize/3.jpg"><img src="images/miniature/3.jpg" alt=""></a></figure>
+      <figure><a href="images/fullsize/4.jpg"><img src="images/miniature/4.jpg" alt=""></a></figure>
+      <figure><a href="images/fullsize/5.jpg"><img src="images/miniature/5.jpg" alt=""></a></figure>
+      <figure><a href="images/fullsize/6.jpg"><img src="images/miniature/6.jpg" alt=""></a></figure>
+      <figure><a href="images/fullsize/7.jpg"><img src="images/miniature/7.jpg" alt=""></a></figure>
+      <figure><a href="images/fullsize/8.jpg"><img src="images/miniature/8.jpg" alt=""></a></figure>
+    </div><!-- .miniatures -->
+
+  </div><!-- .galerie -->
+
+  <!-- Commencer à coder à partir d'ici (n'oubliez pas d'inclure jQuery) -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <!--Plugin-->
+  <script src="plugin/jquery.colorbox-min.js"></script>
+
+  <script>
+    'use strict';
+    $(document).ready(function () {
+      $('figure a').colorbox({
+        rel:'chat',
+        }
+      );
+
+
+
+
+//      $('figure a img').hover(function () {
+//        $('figure a').colorbox();
+//      });
+
+    });
+  </script>
+</body>
+</html>
