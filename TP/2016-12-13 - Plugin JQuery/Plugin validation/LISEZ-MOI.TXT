@@ -1,0 +1,11 @@
+Incluez le plugin jQuery nommé 'jQuery Validation' pour faire en sorte qu'il donne des erreurs lorsque les champs requis sont vides ou mal renseignés.
+
+
+- Tous les champs sont requis 
+
+- Le champs "Nom" doit comporter au minimum 2 caractères
+
+- Le champs "Email" ne doit reconnaître que les adresse email valides
+
+- Le champs mot de passe doit être entre 8 et 20 caractères
+

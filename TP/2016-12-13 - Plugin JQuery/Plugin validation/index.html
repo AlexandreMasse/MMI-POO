@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulaire</title>
+  
+  <!-- Inclusion de la librairie Bootstrap -->
+  <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
+  <!--<link rel="stylesheet" href="plugin/demo/css/screen.css">-->
+</head>
+<body>
+
+<div class="container">
+
+  <h1>Inscription à mon super site</h1>
+
+  <form action="#register" class="form-horizontal">
+
+    <fieldset>
+      <legend>Coordonnées personnelles</legend>
+
+      <p class="text-center">Tous les champs suivis d'un * sont requis !</p>
+      
+      <div class="form-group">
+        <label for="nom" class="col-sm-5 control-label">Nom <small>(2 caractères minimum) *</small></label>
+        <div class="col-sm-3">
+          <input id="nom" name="nom" type="text" class="form-control">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="prenom" class="col-sm-5 control-label">Prénom *</label>
+        <div class="col-sm-3">
+          <input id="prenom" name="prenom" type="text" class="form-control">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="email" class="col-sm-5 control-label">Email *</label>
+        <div class="col-sm-3">
+          <input id="email" name="email" type="text" class="form-control">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="passe" class="col-sm-5 control-label">Mot de passe *</label>
+        <div class="col-sm-3">
+          <input id="passe" name="passe" type="text" class="form-control">
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="form-group text-center">
+      <input type="submit" class="btn btn-primary">
+    </div>
+
+  </form>
+
+</div>
+
+<!-- Commencez à coder à partir d'ici (n'oubliez pas d'inclure jQuery) -->
+<script src="plugin/lib/jquery-1.9.1.js"></script>
+<script src="plugin/dist/jquery.validate.js"></script>
+
+<script>
+  'use strict'
+
+  $(document).ready( function () {
+    $('form').validate( {
+      rules: {
+        nom: { required:true, minlength:2 },
+        prenom: { required:true, minlength:2 },
+        email: { required:true, email:true },
+        passe: { required:true, minlength:8 }
+      },
+
+      messages: {
+        nom: {
+          required: 'Ce champs est obligatoire !',
+          minlength: jQuery.validator.format('FAUT METTRE {0} caracteres minimum bichon')
+        },
+
+      }
+    });
+  });
+
+</script>
+</body>
+</html>
