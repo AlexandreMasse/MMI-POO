@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery/Ajax - Exercice 1</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body class="container">
+  <h1>jQuery/Ajax <small>Exercice 1</small></h1><hr>
+
+  <p>
+    Le titre de la chanson est “<b id="song-title"></b>” de <i id="song-artist"></i>,
+    et fait partie de l’album “<b id="song-album"></b>”
+  </p>
+  <!-- Commencez à coder à partir de cette zone : -->
+  <!-- ============================================================================================= -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script>
+  'use strict';
+  $(document).ready(function () {
+
+      $.getJSON('http://jmpp.fr/temp/?16zla', function (data) {
+
+          $('#song-title').text(data.title);
+          $('#song-artist').text(data.artist);
+          $('#song-album').text(data.album);
+      });
+
+  });
+
+  </script>
+
+</body>
+</html>

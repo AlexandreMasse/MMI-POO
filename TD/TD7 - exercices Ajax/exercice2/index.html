@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery/Ajax - Exercice 2</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>li { padding-bottom: 1rem } </style>
+</head>
+<body class="container">
+  <h1>jQuery/Ajax <small>Exercice 2</small></h1><hr>
+
+  <!-- Commencez à coder à partir de cette zone : -->
+  <!-- ============================================================================================= -->
+  
+  <ul id="musiques">
+    <!--
+      Insérer ici dynamiquement avec jQuery des balises <li> pour chaque musique du tableau :
+        <li>
+          Le titre de la chanson est “<b>...</b>” de <i>...</i>,
+          et fait partie de l’album “<b>...</b>”
+        </li>
+    -->
+  </ul>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script>
+  'use strict';
+  $(document).ready(function () {
+          var music = [];
+      $.getJSON('http://jmpp.fr/temp/?18946', function (data) {
+          $.each(data, function () {
+              music.push('<li>Le titre de la chanson est ' + data.title + ' de ' + data.artist + ' , et fait partie de l’album ' + data.album + '<li>.');
+          });
+      })
+
+      console.log(music);
+  });
+
+
+    /*
+      - Lancez une requête AJAX sur : https://api.myjson.com/bins/18946
+      - Récupèrez le tableau de musiques
+      - Traitez ce tableau pour générer et insérer progressivement des <li>...</li> avec les informations de chaque musique
+
+      (N'oubliez pas d'inclure la bibliothèque jQuery dans le HTML, ni le document ready)
+    */
+  </script>
+
+</body>
+</html>
