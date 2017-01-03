@@ -4,12 +4,22 @@ function Joueur(x, y, direction, vitesse) {
     this.direction = direction;
     this.vitesse = vitesse;
 
-    this.image = graphics['img/vaisseau.png'];
-    this.width = this.image.width;
+    this.image  = graphics['img/vaisseauS2.png'];
+    this.width  = this.image.width;
     this.height = this.image.height;
+    this.tir    = {
+        intervalle : 250,
+        dernierTir : null
+    }
 }
 
 Joueur.prototype.update = function() {
+
+
+
+
+
+
  if (clavier.haut === true) {
 
      //Avancement du joueur
@@ -35,7 +45,14 @@ if (this.y + this.height < 0) // S'il y a un débordement en haut
 if (this.y > canvas.height) // S'il y a un débordement en bas
     this.y = -this.height;
 
+// Si on appuis sur Espace et que l'intervalle de tir minimum est respecté, on peut créer un nouveau laser
+if (clavier.espace === true && Date.now() - this.tir.dernierTir > this.tir.intervalle) {
+    //Dit au gestionnaire de laser de créer un nouveau laser aux positions du joueur
+    lasers.createOne(this.x, this.y, this.direction);
+    sons.laser.play();
 
+    this.tir.dernierTir = Date.now();
+}
 };
 
 Joueur.prototype.render = function() {
