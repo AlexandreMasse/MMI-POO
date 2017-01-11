@@ -1,0 +1,32 @@
+body { text-align: center; }
+#parent {
+	display: inline-block;
+	vertical-align: middle;
+	width: 940px;
+	height: 275px;
+	overflow: hidden;
+}
+#enfant {
+	font-size: 0;
+	line-height: 0;
+}
+#prev, #next {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 2em;
+	text-decoration: none
+}
+#ronds {
+	padding: 0.5rem;
+}
+.rond {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	background-color: #999;
+	border-radius: 50%;
+	margin: 0 2px;
+}
+.rond.active {
+	background-color: #000;
+}

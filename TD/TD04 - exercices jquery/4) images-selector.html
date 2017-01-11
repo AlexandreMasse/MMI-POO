@@ -86,17 +86,85 @@ $(document).on(<mark>'keyup'</mark>, function(<mark>evt</mark>) {
 <h2>À vous de jouer... :</h2>
 
 <section id="produits">
-  <img src=".resources/.images/fruits/1.jpg" id="mures"         alt="Mures"         class="selected">
+  <img src=".resources/.images/fruits/1.jpg" id="mures" alt="Mures" class="selected">
   <img src=".resources/.images/fruits/2.jpg" id="pamplemousses" alt="Pamplemousses" >
-  <img src=".resources/.images/fruits/3.jpg" id="melon"         alt="Melon"         >
-  <img src=".resources/.images/fruits/4.jpg" id="framboises"    alt="Framboises"    >
-  <img src=".resources/.images/fruits/5.jpg" id="concombre"     alt="Concombre"     >
+  <img src=".resources/.images/fruits/3.jpg" id="melon" alt="Melon"         >
+  <img src=".resources/.images/fruits/4.jpg" id="framboises" alt="Framboises"    >
+  <img src=".resources/.images/fruits/5.jpg" id="concombre" alt="Concombre"     >
 </section>
 <section id="panier">
   <!-- Seront insérés ici des copies des produits choisit -->
 </section>
 
 <!-- Commencez à coder ici (n'oubliez pas d'inclure la bibliothèque jQuery dans la page) -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
+<script>
+  'use strict';
+  $(document).ready(function () {
+
+    var nbImages = $('#produits > img').length;
+
+    console.log(nbImages);
+    var currentImage = 0;
+
+
+    $(document).on("keydown", function (evt) {
+      //Gauche
+      if (evt.keyCode === 37) {
+        currentImage--;
+        if (currentImage < 0 ) {
+          currentImage = nbImages - 1;
+        };
+
+
+        $('.selected').removeClass('selected');
+        $("#produits img").eq(currentImage).addClass('selected');
+
+      };
+
+      //Droite
+      if (evt.keyCode === 39) {
+
+        currentImage++;
+
+        if (currentImage > nbImages - 1 ) {
+          currentImage = 0;
+        }
+
+
+        $('.selected').removeClass('selected');
+        $("#produits img").eq(currentImage).addClass('selected');
+      };
+
+      //Entrée
+      if (evt.keyCode === 13) {
+
+        var currentId = $('.selected').attr('id');
+
+        //Vertification si le fruit existe dans le panier
+        if ( $('#panier #'+currentId ).length ) {
+          //Effacer le fruit dans le panier
+          $('#panier #'+currentId ).remove();
+          //Remettre opacité 1
+          $('.selected').css('opacity', '1');
+        }
+        else {
+          //Cloner le fruit et le mettre dans le panier
+          var copie = $('.selected').clone();
+          $("#panier").append(copie);
+          $("#panier img").removeClass('selected');
+
+          $('.selected').css('opacity', '0.5');
+
+        };
+
+
+      };
+
+
+    })
+  });
+</script>
 </body>
 </html>

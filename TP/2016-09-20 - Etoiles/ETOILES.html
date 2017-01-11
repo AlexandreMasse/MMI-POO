@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+		canvas {
+			background-color: black;
+			position: absolute;
+			top: 0; left: 0; bottom: 0; right: 0;
+		}
+	</style>
+</head>
+<body>
+
+<canvas id="zone-dessin"></canvas>
+
+<script>
+
+	const LARGEUR_ECRAN = window.innerWidth;
+	const HAUTEUR_ECRAN = window.innerHeight;
+
+	const NOMBRE_ETOILES = 400;
+	var ETOILES = [];
+
+	var canvas  = document.getElementById('zone-dessin');
+	var context = canvas.getContext('2d');
+
+	canvas.width  = LARGEUR_ECRAN;
+	canvas.height = HAUTEUR_ECRAN;
+
+	// Création et paramètrage des étoiles
+	// =============
+	function init() {
+		for (var taille, i = 1; i <= NOMBRE_ETOILES; i++) {
+			taille = nombre_au_hasard_entre(1, 10);
+			ETOILES.push({
+				x       : nombre_au_hasard_entre(0, LARGEUR_ECRAN),
+				y       : nombre_au_hasard_entre(- taille, HAUTEUR_ECRAN + taille),
+				largeur : taille,
+				hauteur : taille,
+				couleur : {
+					// les valeurs 255 représentent les niveaux de rouge, vert et bleu dans la couleur de l'étoile
+					// le reste (taille / 10) permet de gérer l'intensité de la couleur en fonction de la taille de l'étoile (pour conserver l'effet de distance et de parallaxe)
+					rouge : (255) * taille / 10,	
+					vert  : (255) * taille / 10,
+					bleu  : (255) * taille / 10
+				},
+				vitesse : taille * 0.5,
+				angle   : 0
+			});
+		}
+	}
+
+	// Fonction qui gère le comportement des étoiles
+	// ============
+	function animate() {
+		for (var etoile, i = 0; i < ETOILES.length; i++) {
+			etoile = ETOILES[i];
+
+			// Mouvement sinusoïdal
+			etoile.angle += 0.05;
+			etoile.x += etoile.vitesse;
+			etoile.y += Math.sin(etoile.angle) * etoile.vitesse / 5;
+
+			// Mouvement linéaire
+			// etoile.y = etoile.y + etoile.vitesse;
+
+			// Gestion de la sortie des étoiles de l'écran
+			if (etoile.x > LARGEUR_ECRAN) {
+				etoile.x = 0;
+			}
+			if (etoile.x < 0) {
+				etoile.x = LARGEUR_ECRAN;
+			}
+			if (etoile.y > HAUTEUR_ECRAN) {
+				etoile.y = 0;
+			}
+			if (etoile.y < 0) {
+				etoile.y = HAUTEUR_ECRAN;
+			}
+		}
+	}
+
+	// Fonction qui dessine les étoiles
+	// ===========
+	function render() {
+		context.fillStyle = 'rgba(0,0,0, 0.7)'; // alpha de l'effacement du canvas (entre 0.1 et 0.9)
+		context.fillRect(0, 0, LARGEUR_ECRAN, HAUTEUR_ECRAN);
+
+		for (var etoile, i = 0; i < ETOILES.length; i++) {
+			etoile = ETOILES[i];
+
+			context.fillStyle = 'rgb(' + etoile.couleur.rouge + ',' + etoile.couleur.vert + ',' + etoile.couleur.bleu + ')';
+
+			// Etoile en forme de rond
+			context.beginPath();
+			context.arc(etoile.x, etoile.y, etoile.largeur * 0.33, 0, Math.PI * 2);
+			context.fill();
+			context.closePath();
+
+			// Etoile en forme de carré
+			// context.fillRect(etoile.x, etoile.y, etoile.largeur, etoile.hauteur);
+		}
+	}
+
+	function run() {
+		requestAnimationFrame(run);
+
+		animate();
+		render();
+	}
+
+	init();
+	run();
+
+	function nombre_au_hasard_entre(min, max) {
+		return Math.round(Math.random() * (max - min) + min);
+	}
+</script>
+
+</body>
+</html>
