@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+			<meta charset="UTF-8" />
+			<title>Trombinoscope</title>
+
+			<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.css">
+
+			<link rel="stylesheet" type="text/css" href="css/index.css">
+	</head>
+	<body>
+
+	<main class="container">
+		<h1>Trombinoscope</h1>
+		<hr>
+
+		<!-- Formulaire de recherche -->
+		<form id="search-form">
+			<div class="form-group col-md-4">
+				<input type="search" class="form-control" id="search-field" placeholder="Jane Doe">
+			</div>
+			<button type="submit" class="btn btn-primary" id="search-button">Rechercher</button>
+		</form>
+		<!-- Fin du formulaire -->
+
+		<div id="results-list" class="row">
+		<!-- Début de la liste de résultats -->
+			
+
+			<div class="col-md-2" data-name="harry banks">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/men/85.jpg" alt="harry banks">
+					<div class="caption">
+						<h3>harry banks</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="anna cooper">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/women/78.jpg" alt="anna cooper">
+					<div class="caption">
+						<h3>anna cooper</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="kubra yildirim">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/women/13.jpg" alt="kubra yildirim">
+					<div class="caption">
+						<h3>kubra yildirim</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="ava nicolas">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/women/81.jpg" alt="ava nicolas">
+					<div class="caption">
+						<h3>ava nicolas</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="ivan barrett">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/men/24.jpg" alt="ivan barrett">
+					<div class="caption">
+						<h3>ivan barrett</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="archer turner">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/men/27.jpg" alt="archer turner">
+					<div class="caption">
+						<h3>archer turner</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="emre fahri">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/men/27.jpg" alt="emre fahri">
+					<div class="caption">
+						<h3>emre fahri</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="caitlin ford">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/women/30.jpg" alt="caitlin ford">
+					<div class="caption">
+						<h3>caitlin ford</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="afşar abadan">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/women/77.jpg" alt="afşar abadan">
+					<div class="caption">
+						<h3>afşar abadan</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="sean ronald">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/men/32.jpg" alt="sean ronald">
+					<div class="caption">
+						<h3>sean ronald</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="lea andersen">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/women/15.jpg" alt="lea andersen">
+					<div class="caption">
+						<h3>lea andersen</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="anabel van iwaarden">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/women/21.jpg" alt="anabel van iwaarden">
+					<div class="caption">
+						<h3>anabel van iwaarden</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="noah arndt">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/men/14.jpg" alt="noah arndt">
+					<div class="caption">
+						<h3>noah arndt</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="calum paulus">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/men/84.jpg" alt="calum paulus">
+					<div class="caption">
+						<h3>calum paulus</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="apolline noel">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/women/63.jpg" alt="apolline noel">
+					<div class="caption">
+						<h3>apolline noel</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="julie gerard">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/women/46.jpg" alt="julie gerard">
+					<div class="caption">
+						<h3>julie gerard</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="luka andrew">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/men/85.jpg" alt="luka andrew">
+					<div class="caption">
+						<h3>luka andrew</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="flora jesus">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/women/17.jpg" alt="flora jesus">
+					<div class="caption">
+						<h3>flora jesus</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="rita fernandez">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/women/6.jpg" alt="rita fernandez">
+					<div class="caption">
+						<h3>rita fernandez</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="danny glove">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/men/10.jpg" alt="danny glove">
+					<div class="caption">
+						<h3>danny glove</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="dorian procee">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/men/11.jpg" alt="dorian procee">
+					<div class="caption">
+						<h3>dorian procee</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="che lommerse">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/men/78.jpg" alt="che lommerse">
+					<div class="caption">
+						<h3>che lommerse</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="mitchell knobben">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/men/2.jpg" alt="mitchell knobben">
+					<div class="caption">
+						<h3>mitchell knobben</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="fausto da luz">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/men/48.jpg" alt="fausto da luz">
+					<div class="caption">
+						<h3>fausto da luz</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="chahrazad mark">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/women/14.jpg" alt="chahrazad mark">
+					<div class="caption">
+						<h3>chahrazad mark</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="arthur reich">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/men/9.jpg" alt="arthur reich">
+					<div class="caption">
+						<h3>arthur reich</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="ana montudor">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/women/7.jpg" alt="ana montudor">
+					<div class="caption">
+						<h3>ana montudor</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="leon held">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/men/72.jpg" alt="leon held">
+					<div class="caption">
+						<h3>leon held</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="ronan smith">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/men/79.jpg" alt="ronan smith">
+					<div class="caption">
+						<h3>ronan smith</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="djesse rijk">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/men/15.jpg" alt="djesse rijk">
+					<div class="caption">
+						<h3>djesse rijk</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="oliver madsen">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/men/68.jpg" alt="oliver madsen">
+					<div class="caption">
+						<h3>oliver madsen</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="emilia mikkola">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/women/24.jpg" alt="emilia mikkola">
+					<div class="caption">
+						<h3>emilia mikkola</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="elizabeth lee">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/women/6.jpg" alt="elizabeth lee">
+					<div class="caption">
+						<h3>elizabeth lee</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="maria larsen">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/women/49.jpg" alt="maria larsen">
+					<div class="caption">
+						<h3>maria larsen</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="gema reyes">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/women/62.jpg" alt="gema reyes">
+					<div class="caption">
+						<h3>gema reyes</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="oscar bowman">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/men/12.jpg" alt="oscar bowman">
+					<div class="caption">
+						<h3>oscar bowman</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="veronica prad">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/women/71.jpg" alt="veronica prad">
+					<div class="caption">
+						<h3>veronica prad</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="magdalena aguilar">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/women/55.jpg" alt="magdalena aguilar">
+					<div class="caption">
+						<h3>magdalena aguilar</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="léon meyer">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/men/85.jpg" alt="léon meyer">
+					<div class="caption">
+						<h3>léon meyer</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="barac nascimento">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/men/36.jpg" alt="barac nascimento">
+					<div class="caption">
+						<h3>barac nascimento</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="adam sattler">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/men/31.jpg" alt="adam sattler">
+					<div class="caption">
+						<h3>adam sattler</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="phoebe cooper">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/women/60.jpg" alt="phoebe cooper">
+					<div class="caption">
+						<h3>phoebe cooper</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="evie jackson">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/women/31.jpg" alt="evie jackson">
+					<div class="caption">
+						<h3>evie jackson</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="austin douglas">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/men/47.jpg" alt="austin douglas">
+					<div class="caption">
+						<h3>austin douglas</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="dana evy">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/women/96.jpg" alt="dana evy">
+					<div class="caption">
+						<h3>dana evy</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="jano wiedemann">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/men/2.jpg" alt="jano wiedemann">
+					<div class="caption">
+						<h3>jano wiedemann</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="olivia huhta">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/women/13.jpg" alt="olivia huhta">
+					<div class="caption">
+						<h3>olivia huhta</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="bruce nukan">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/men/46.jpg" alt="bruce nukan">
+					<div class="caption">
+						<h3>bruce nukan</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="maddison scott">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/women/48.jpg" alt="maddison scott">
+					<div class="caption">
+						<h3>maddison scott</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2" data-name="jeremy ashkenas">
+				<div class="thumbnail">
+					<img src="https://randomuser.me/api/portraits/men/69.jpg" alt="jeremy ashkenas">
+					<div class="caption">
+						<h3>jeremy ashkenas</h3>
+					</div>
+				</div>
+			</div>
+
+		<!-- Fin de la liste de résultats -->
+		</div>
+
+	</main>
+
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script>
+//	'use strict';
+	$(document).ready(function () {
+
+		//Le formulaire ne recharge pas la page
+		$("#search-form").submit(function(e) {
+			e.preventDefault();
+		});
+
+
+		//A la soumission du formulaire executer recherche
+	    $('#search-form').on("submit", rechercher );
+
+
+		function rechercher() {
+
+			var recherche = $('#search-field').val();
+
+			//Le nombre total de personne
+			var nbDePersonne = $('#results-list > div').length;
+
+			//Pour chaque personne
+			for ( var i = 0; i < nbDePersonne; i++ ) {
+
+				if ( $('#results-list > div').eq(i).attr("data-name") == recherche) {
+					//Si le data-name correspond alors afficher la div
+					$('#results-list > div').eq(i).fadeIn("slow");
+				}
+				else {
+					//Si le data-name ne correspond pas alors masquer la div
+					$('#results-list > div').eq(i).fadeOut("slow");
+				}
+			}
+		}
+	});
+
+	</script>
+	</body>
+</html>
